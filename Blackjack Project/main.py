@@ -20,17 +20,26 @@ def calculate_score(cards):
 
 user_cards = []
 computer_cards = []
+is_game_over = False
 
 for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
 
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
 
+print(f"Your cards: {user_cards}, current score: {user_score}")
+print(f"Computer's first card: {computer_cards[0]}")
+
+if user_score == 0 or computer_score == 0 or user_score > 21:
+    is_game_over = True
+"""
 def game():
     print(logo)
     print("\nWelcome to Blackjack, Do you want to start? Type 'y' or 'no': ")
-    print(f"Your cards: [], [], current score: ")
-    print(f"Computer's first card: ")
-    input("Type 'y' to get another card, type 'no'to pass: ")
+
+    #input("Type 'y' to get another card, type 'no'to pass: ")
 game()
+"""
