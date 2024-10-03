@@ -7,12 +7,24 @@ def deal_card():
     card = random.choice(cards)
     return card
 
+def calculate_score(cards):
+    #check for blackjack a hand with only 2 cards and return 0 instead of actual score
+    if sum(cards) == 21 and len(cards) ==2:
+        return 0
+    #check for an 11 (ace) if score is over 21 replace it with 1
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+
+    return sum(cards)
+
 user_cards = []
 computer_cards = []
 
 for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
+
 
 
 def game():
