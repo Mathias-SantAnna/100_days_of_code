@@ -1,5 +1,8 @@
-word_per_page = 0
-pages = int(input("num of pages: "))
-word_per_page = int(input("num of words per page: "))
-total_word = pages * word_per_page
-print(total_word)
+# TO DOs:
+#1 Display options for user to choose
+
+#2 Ask the user who has more followers
+
+#3 Compare A against B function 
+
+#4 Return result and stop if guess wro
