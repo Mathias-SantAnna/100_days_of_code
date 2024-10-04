@@ -1,8 +1,18 @@
 # TO DOs:
-#1 Display options for user to choose
+# Display art, 
 
-#2 Ask the user who has more followers
+# Generate random options for user to choose from game data
 
-#3 Compare A against B function 
+# Format account data into printable format
 
-#4 Return result and stop if guess wro
+# Ask the user who has more followers
+
+# Compare A against B function 
+
+# Check IF user guess is correct
+
+# Return result and keep it
+
+# Make repeatable 
+
+# Make account at position B become the next account at position A
