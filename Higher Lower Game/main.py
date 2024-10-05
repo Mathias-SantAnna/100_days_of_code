@@ -43,7 +43,27 @@ def compare(account_a, account_b, user_guess, score):
         return score, False  # Stop the game
     return score, True  # Continue the game
 
+# Function to display a final message based on the final score
+def display_final_message(final_score):
+    if final_score == 0:
+        print("\nThat‘s a terrible score. 🫠 The average score is 3.2. Put some effort into it.")
+    elif final_score < 5:
+        print(f"\nErrr Ops!🫣  You scored: {final_score}. Keep practicing! ")
+    elif final_score < 10:
+        print(f"\nGreat! You scored: {final_score}.👏 You are pretty good! That‘s a score worth sharing ")
+    elif final_score < 16:
+        print(f"\Excellent!You scored: {final_score}.💪 You're a true master of the Higher Lower Game!🐐")
+    else:
+        print(f"\nWooooow Amazing! You scored {final_score}! your ahead of 99% of all people. Tell me now, how did you cheated? 🤨")
 
+# Function to ask the user if they want to play again
+def ask_to_play_again():
+    play_again = input("\nDo you want to play again? Type 'Y' for Yes or 'N' for No: ").upper()
+    while play_again not in ['Y', 'N']:
+        print("Invalid input. Please type 'Y' or 'N'.")
+        play_again = input("\nDo you want to play again? Type 'Y' for Yes or 'N' for No: ").upper()
+    return play_again == 'Y'
+    
 def play_game():
     global score  # use Global score to keep it across rounds
     print(logo)  
@@ -70,9 +90,15 @@ def play_game():
         while account_a == account_b:
             account_b = random.choice(data)
     
-    print("\nGame Over!")
-    print(f"Your final score is {score}.")
+    # Display final message based on score
+    display_final_message(score)
+    
+    # Ask if the user
+    if ask_to_play_again():
+        score = 0  # Reset the score for the new game
+        play_game()  # Restart the game
+    else:
+        print("Thanks for playing! Goodbye!")
 
 # Start the game
-play_game()game
 play_game()
