@@ -39,8 +39,8 @@ def compare(account_a, account_b, user_guess, score):
         print(f"You're right! Current score: {score}")
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
-        score = 0  
-    return score
+        return score, False  # Return False to stop the game
+    return score, True  # Return True to continue the game
 
 # Main game loop
 def play_game():
